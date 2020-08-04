@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { addCar } from "../../store/cars";
 import { useDispatch } from "react-redux";
+import { showMessage, hideMessage } from "../../store/layout";
+
 
 export default function Add() {
   const [form, setForm] = useState({ name: "", url: "" });
@@ -14,9 +16,14 @@ export default function Add() {
     e.preventDefault();
 
 	dispatch(addCar(form));
-	console.log(form);
 
-	setForm({name: '', url: ''});
+  setForm({name: '', url: ''});
+  
+  dispatch(showMessage());
+
+  setTimeout(() => {
+    dispatch(hideMessage());
+  }, 2500);
   }
 
   return (
