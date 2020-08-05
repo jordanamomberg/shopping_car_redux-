@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { addCar } from "../../store/cars";
 import { useDispatch } from "react-redux";
-import { showMessage, hideMessage } from "../../store/layout";
+import { hideMessage, showMessage } from "../../store/layout";
 
 
 export default function Add() {
